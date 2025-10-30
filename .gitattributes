@@ -1,0 +1,8 @@
+# .gitattributes
+*.step filter=lfs diff=lfs merge=lfs -text
+*.stp  filter=lfs diff=lfs merge=lfs -text
+*.brd  filter=lfs diff=lfs merge=lfs -text     # adjust for your EDA
+*.sch  filter=lfs diff=lfs merge=lfs -text
+*.zip  filter=lfs diff=lfs merge=lfs -text
+*.pdf  filter=lfs diff=lfs merge=lfs -text
+*.raw  filter=lfs diff=lfs merge=lfs -text     
