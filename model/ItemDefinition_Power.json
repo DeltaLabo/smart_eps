@@ -1,0 +1,28 @@
+{
+  "data": {
+    "declaredName": "Power",
+    "elementId": "adc7816b-999c-462d-b68e-27be817f9aa1",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "f41df597-9bbf-4c32-a91b-7ba6e7c770cf",
+          "memberElement": "ebdc7e51-f66c-4b76-a3cd-c9d900e4c84e",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "value",
+                "elementId": "ebdc7e51-f66c-4b76-a3cd-c9d900e4c84e"
+              },
+              "eClass": "sysml:AttributeUsage",
+              "id": "417e4c22-9b26-47d0-960d-53dff1967524"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "ea56b849-a4ec-4987-8859-6750a6f9282d"
+      }
+    ]
+  },
+  "eClass": "sysml:ItemDefinition",
+  "id": "6ce44bc5-ffd3-446e-92cd-edcb7cc07b21"
+}

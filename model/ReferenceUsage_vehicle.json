@@ -1,0 +1,19 @@
+{
+  "data": {
+    "declaredName": "vehicle",
+    "elementId": "bca7ea34-ce08-484f-b3f5-6651f0dd6d92",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "502df018-49df-4739-988a-cefe0b359b80",
+          "type": "8dc587e6-ccdc-44e5-bb18-9799d35eb662",
+          "typedFeature": "bca7ea34-ce08-484f-b3f5-6651f0dd6d92"
+        },
+        "eClass": "sysml:FeatureTyping",
+        "id": "756bacd6-057a-4d27-84e4-a36e0e416004"
+      }
+    ]
+  },
+  "eClass": "sysml:ReferenceUsage",
+  "id": "427edd04-4461-4a51-ae3b-c48991d59677"
+}

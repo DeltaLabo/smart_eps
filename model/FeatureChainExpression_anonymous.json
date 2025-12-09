@@ -1,0 +1,17 @@
+{
+  "data": {
+    "elementId": "8ac5586c-9f57-4edf-923d-3243b8aff4a1",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "49f7559f-5e61-4f73-b450-28ab93e26904",
+          "memberElement": "dc6ff5af-3853-4314-b2ec-380194b05313"
+        },
+        "eClass": "sysml:Membership",
+        "id": "f0991c44-22e2-4c72-9fc2-bdd9dc0ce901"
+      }
+    ]
+  },
+  "eClass": "sysml:FeatureChainExpression",
+  "id": "92c5904f-4711-41ef-a47e-9bedc7e06d20"
+}

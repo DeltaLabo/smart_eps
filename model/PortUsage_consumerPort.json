@@ -1,0 +1,18 @@
+{
+  "data": {
+    "declaredName": "consumerPort",
+    "elementId": "2818fcc0-d22b-4198-b04d-0d5a34c5dedd",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "8e0cb366-e8e9-49ec-847e-57d02032a3e0",
+          "typedFeature": "2818fcc0-d22b-4198-b04d-0d5a34c5dedd"
+        },
+        "eClass": "sysml:ConjugatedPortTyping",
+        "id": "85c635ca-e286-442d-9e81-0765f2c583e6"
+      }
+    ]
+  },
+  "eClass": "sysml:PortUsage",
+  "id": "bb84c055-bdba-409f-a95f-0fce54fda042"
+}

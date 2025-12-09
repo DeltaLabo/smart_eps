@@ -1,0 +1,9 @@
+{
+  "data": {
+    "declaredName": "batmobileAcceleration",
+    "declaredShortName": "REQ43",
+    "elementId": "1c830113-e539-412a-96ea-edba9c25261d"
+  },
+  "eClass": "sysml:RequirementUsage",
+  "id": "19bdc6c3-cf3e-4e77-9a8b-3d5e3ec6647f"
+}

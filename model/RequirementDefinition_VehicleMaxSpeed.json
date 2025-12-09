@@ -1,0 +1,114 @@
+{
+  "data": {
+    "declaredName": "VehicleMaxSpeed",
+    "elementId": "e1ccd5ce-6040-4577-b803-bdd566c69458",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "740435b5-f9c5-4fb4-92ed-d871fddd5580",
+          "memberElement": "2fe119de-c8ca-428a-94d9-ebe3fe5e6dcd",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "body": "The actual speed of the vehicle shall \n             * be less than the maximum speed.",
+                "elementId": "2fe119de-c8ca-428a-94d9-ebe3fe5e6dcd"
+              },
+              "eClass": "sysml:Documentation",
+              "id": "e7384078-f384-4297-92fb-d4794a4b7df2"
+            }
+          ]
+        },
+        "eClass": "sysml:OwningMembership",
+        "id": "f76d13ad-a413-485f-8f8b-fc946629ab43"
+      },
+      {
+        "data": {
+          "elementId": "bcbfc665-d2ba-4fda-bca7-8f280ab5d9c6",
+          "memberElement": "bca7ea34-ce08-484f-b3f5-6651f0dd6d92",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "vehicle",
+                "elementId": "bca7ea34-ce08-484f-b3f5-6651f0dd6d92",
+                "ownedRelationship": [
+                  {
+                    "data": {
+                      "elementId": "502df018-49df-4739-988a-cefe0b359b80",
+                      "type": "8dc587e6-ccdc-44e5-bb18-9799d35eb662",
+                      "typedFeature": "bca7ea34-ce08-484f-b3f5-6651f0dd6d92"
+                    },
+                    "eClass": "sysml:FeatureTyping",
+                    "id": "756bacd6-057a-4d27-84e4-a36e0e416004"
+                  }
+                ]
+              },
+              "eClass": "sysml:ReferenceUsage",
+              "id": "427edd04-4461-4a51-ae3b-c48991d59677"
+            }
+          ]
+        },
+        "eClass": "sysml:SubjectMembership",
+        "id": "849dd477-da39-4b0f-b886-1707aa5362a4"
+      },
+      {
+        "data": {
+          "elementId": "b518dfc0-69a2-49c1-a478-05e78e0101d5",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "pm",
+                "elementId": "15a68252-69d9-462f-8106-3c941d71cef8",
+                "ownedRelationship": [
+                  {
+                    "data": {
+                      "elementId": "58c6db96-03cb-4417-a4cb-d36240a78133",
+                      "type": "ebeda4c1-5085-41ce-b112-554f3f916032",
+                      "typedFeature": "15a68252-69d9-462f-8106-3c941d71cef8"
+                    },
+                    "eClass": "sysml:FeatureTyping",
+                    "id": "19491664-170d-473e-93b6-77a3dd6a6557"
+                  }
+                ]
+              },
+              "eClass": "sysml:PartUsage",
+              "id": "55137f6a-6a69-478c-b52e-ee25d9f034c3"
+            }
+          ]
+        },
+        "eClass": "sysml:StakeholderMembership",
+        "id": "f402d29f-1d2c-4751-b2fd-2c065f4b4b8f"
+      },
+      {
+        "data": {
+          "elementId": "a6fb50a0-f5a9-4634-8281-4de8d28d1ac4",
+          "memberElement": "403e5724-4f62-448e-b34c-dd04de6fbf31",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "maxSpeed",
+                "elementId": "403e5724-4f62-448e-b34c-dd04de6fbf31",
+                "ownedRelationship": [
+                  {
+                    "data": {
+                      "elementId": "8c1b9030-6b74-4f50-ac48-a87260837a81",
+                      "type": "sysml:AttributeDefinition sysmllibrary:///a269cb9d-5a98-33e9-95e8-8701328ddda6#09289b65-bf44-5a6d-91db-feabdbe6d1fc",
+                      "typedFeature": "403e5724-4f62-448e-b34c-dd04de6fbf31"
+                    },
+                    "eClass": "sysml:FeatureTyping",
+                    "id": "d84e8289-033a-4877-ba95-426f2f97c0d6"
+                  }
+                ]
+              },
+              "eClass": "sysml:AttributeUsage",
+              "id": "83a3e30e-b607-4597-9290-ed58aeec3eb9"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "30d0e654-9bc3-4311-87f5-e8068b6f376a"
+      }
+    ]
+  },
+  "eClass": "sysml:RequirementDefinition",
+  "id": "cffdf92b-b41e-496a-9eec-b33391815be5"
+}

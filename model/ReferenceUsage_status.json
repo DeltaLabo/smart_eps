@@ -1,0 +1,19 @@
+{
+  "data": {
+    "declaredName": "status",
+    "elementId": "be3c5bf5-cf22-4cd0-a7e7-56081d27eec4",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "ee4ff121-6bd1-4108-b482-e1818f1e2b66",
+          "type": "9fcdddd1-7e9d-4fc0-8a5c-bd363c7eab4f",
+          "typedFeature": "be3c5bf5-cf22-4cd0-a7e7-56081d27eec4"
+        },
+        "eClass": "sysml:FeatureTyping",
+        "id": "6ed3846c-36ae-4374-8bf6-c8d773401974"
+      }
+    ]
+  },
+  "eClass": "sysml:ReferenceUsage",
+  "id": "5f4d0f82-34bc-44e6-a029-387ecf96f869"
+}

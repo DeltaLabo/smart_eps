@@ -1,0 +1,119 @@
+{
+  "data": {
+    "declaredName": "ActivateRocketBooster",
+    "elementId": "e7a007f7-1d68-4a81-887b-c4022c72c8ae",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "b199b8be-f34b-47b1-9a3a-26c8e86686d6"
+        },
+        "eClass": "sysml:Membership",
+        "id": "69effdfd-bbbe-406e-bd09-5139b72a563b"
+      },
+      {
+        "data": {
+          "elementId": "d720d354-5025-46e2-971b-ad2d615eceea",
+          "ownedRelationship": [
+            {
+              "data": {
+                "elementId": "2c80a2e8-0b20-4baf-b5df-5def455e29a7",
+                "source": [
+                  "d720d354-5025-46e2-971b-ad2d615eceea"
+                ]
+              },
+              "eClass": "sysml:SuccessionAsUsage",
+              "id": "153c25bb-e555-446e-ab22-7964caad1259"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "2843123a-0a67-4c0c-a96e-931b59cf6be2"
+      },
+      {
+        "data": {
+          "elementId": "3d65aa18-3bce-4764-b0b5-942f88d2aa7b",
+          "memberElement": "6eb2217e-d796-4b46-ad7a-1dd95b4e65a2",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "prepareBoost",
+                "elementId": "6eb2217e-d796-4b46-ad7a-1dd95b4e65a2"
+              },
+              "eClass": "sysml:ActionUsage",
+              "id": "ef38857e-1b90-4c3a-80be-6238003a50ae"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "5240ef42-d227-4b6a-9bb5-6080bfbb87c8"
+      },
+      {
+        "data": {
+          "elementId": "42e89260-df75-4dc2-a62f-42188c7e9d56",
+          "ownedRelationship": [
+            {
+              "data": {
+                "elementId": "44c7b7f5-1a8b-4426-a0d3-4a535a142fc1",
+                "source": [
+                  "42e89260-df75-4dc2-a62f-42188c7e9d56"
+                ]
+              },
+              "eClass": "sysml:SuccessionAsUsage",
+              "id": "535baed9-df95-4815-b9a6-42a65a48e19a"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "0fc1d354-1aec-4260-af91-91e226334933"
+      },
+      {
+        "data": {
+          "elementId": "5ca12a95-c5d8-4dd7-8596-2cec33d84772",
+          "memberElement": "f649cce0-c71e-481c-9855-abf446b5e78c",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "activateBoost",
+                "elementId": "f649cce0-c71e-481c-9855-abf446b5e78c"
+              },
+              "eClass": "sysml:ActionUsage",
+              "id": "60eef709-99a7-4d36-8246-ffe8adfc6be5"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "5e01a7a8-d657-46bf-b6d5-c095d5b5ed2e"
+      },
+      {
+        "data": {
+          "elementId": "f323b8c9-8744-4b08-9d81-3163c063ce73",
+          "ownedRelationship": [
+            {
+              "data": {
+                "elementId": "c1a9ae24-53f1-4054-a988-2d22682ce0c5",
+                "source": [
+                  "f323b8c9-8744-4b08-9d81-3163c063ce73"
+                ]
+              },
+              "eClass": "sysml:SuccessionAsUsage",
+              "id": "2d850c85-8f7b-4359-bba7-6d22087e9645"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "b6674d5c-2e8f-4f4d-9f8c-398c59d63957"
+      },
+      {
+        "data": {
+          "elementId": "f1349952-9ec3-40e0-89d5-79d726d76770",
+          "subclassifier": "e7a007f7-1d68-4a81-887b-c4022c72c8ae",
+          "superclassifier": "f3cedde2-3e92-4e35-8060-93d07f45ce57"
+        },
+        "eClass": "sysml:Subclassification",
+        "id": "ff4b338e-cbe3-4f45-add7-f0dde0bbe05e"
+      }
+    ]
+  },
+  "eClass": "sysml:ActionDefinition",
+  "id": "c5be8187-9d01-46ce-bc2c-15738cbec970"
+}

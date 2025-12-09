@@ -1,0 +1,28 @@
+{
+  "data": {
+    "declaredName": "realName",
+    "elementId": "a7c80183-bb86-49de-890d-32b6e08e799f",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "7e1e40e9-b18d-410a-aa93-f08d153d49ab",
+          "memberElement": "4c8f11f2-6b7b-42f2-811a-55bfa9424448",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "elementId": "4c8f11f2-6b7b-42f2-811a-55bfa9424448",
+                "value": "Jon Holt"
+              },
+              "eClass": "sysml:LiteralString",
+              "id": "622a374c-69aa-4e57-89c8-5d0009d28683"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureValue",
+        "id": "b0f5b8b8-a43a-4240-8ba6-a7d0fa06117a"
+      }
+    ]
+  },
+  "eClass": "sysml:AttributeUsage",
+  "id": "f7bee4a5-2566-4740-bcd5-e9cf66da0679"
+}

@@ -1,0 +1,29 @@
+{
+  "data": {
+    "elementId": "4dd0de83-5f42-4576-83b3-6227e92ef631",
+    "memberElement": "1118f18d-e334-4aea-b34a-0698f020fc86",
+    "ownedRelatedElement": [
+      {
+        "data": {
+          "declaredName": "driver",
+          "elementId": "1118f18d-e334-4aea-b34a-0698f020fc86",
+          "ownedRelationship": [
+            {
+              "data": {
+                "elementId": "cc8108c8-23df-4c35-ba78-20fe1a26d11e",
+                "type": "4db82a09-b87f-465c-9b63-f9cb01e755a5",
+                "typedFeature": "1118f18d-e334-4aea-b34a-0698f020fc86"
+              },
+              "eClass": "sysml:FeatureTyping",
+              "id": "08aa3adb-bba6-4d26-bb89-35a47388743e"
+            }
+          ]
+        },
+        "eClass": "sysml:PartUsage",
+        "id": "3d3625a0-f475-4a9c-b9bb-03fe04ea3172"
+      }
+    ]
+  },
+  "eClass": "sysml:ActorMembership",
+  "id": "f8a39764-d582-48bd-981f-6f5811eb30c1"
+}

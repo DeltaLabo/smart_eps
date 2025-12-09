@@ -1,0 +1,8 @@
+{
+  "data": {
+    "elementId": "44aaebc3-7598-4d80-8245-be05f867035f",
+    "importedNamespace": "sysml:LibraryPackage sysmllibrary:///a1c50db3-eeb1-3bf2-9225-9e769ae865df#7bea1bf0-462d-55d1-96bd-d7ae733667c1"
+  },
+  "eClass": "sysml:NamespaceImport",
+  "id": "49c59b83-9cbd-4fb9-aa3c-a722e5c34bf8"
+}

@@ -1,0 +1,37 @@
+{
+  "data": {
+    "declaredName": "y",
+    "direction": "in",
+    "elementId": "4347d28a-f13f-4007-8c45-ad983582ce93",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "8ec77595-00cf-49b2-9dc4-838899a5139a",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "elementId": "0ded2264-a62f-4b06-a494-d2ca3a7c61aa",
+                "ownedRelationship": [
+                  {
+                    "data": {
+                      "elementId": "495c7dcf-df8b-405d-85a4-91d7e8614b14",
+                      "memberElement": "sysml:AttributeUsage sysmllibrary:///012a4481-2eb9-3abd-8d59-ad313ecfbfd6#0d6a1209-73f8-585a-8f77-2fa0f2789307"
+                    },
+                    "eClass": "sysml:Membership",
+                    "id": "b743b2fb-50be-4a87-83b9-c5f9b58db38b"
+                  }
+                ]
+              },
+              "eClass": "sysml:FeatureReferenceExpression",
+              "id": "dad666c2-8f4d-4fb9-a2f9-1295424df6ca"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureValue",
+        "id": "2032c856-cf5c-4f94-9c5a-d177624050c9"
+      }
+    ]
+  },
+  "eClass": "sysml:Feature",
+  "id": "33d0941b-5cdc-40d4-bced-e5846302be2b"
+}

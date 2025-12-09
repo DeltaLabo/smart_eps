@@ -1,0 +1,19 @@
+{
+  "data": {
+    "declaredName": "supplierPort",
+    "elementId": "133c68a7-ecbc-4e06-a75a-77dde9d4fbb5",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "401efd03-16d0-4bca-857b-943b240ef86d",
+          "type": "478757c7-80df-465c-83a7-70524d6e2726",
+          "typedFeature": "133c68a7-ecbc-4e06-a75a-77dde9d4fbb5"
+        },
+        "eClass": "sysml:FeatureTyping",
+        "id": "f54fab7d-7604-4c60-833a-dd0c398c3d47"
+      }
+    ]
+  },
+  "eClass": "sysml:PortUsage",
+  "id": "fcc32567-5f80-4de1-9266-666ffabc3ec2"
+}

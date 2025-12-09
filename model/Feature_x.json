@@ -1,0 +1,28 @@
+{
+  "data": {
+    "declaredName": "x",
+    "direction": "in",
+    "elementId": "5aef9c30-3b7f-4fe0-a32b-a3f0395061e6",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "32818e54-2cc6-4741-b570-b0624f37c193",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "elementId": "b08a1de8-d937-4def-91ee-fc7f42562383",
+                "value": 80
+              },
+              "eClass": "sysml:LiteralInteger",
+              "id": "81b11f86-a45f-4a90-af38-c5fa86f4e733"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureValue",
+        "id": "af7ef834-f8db-4aa1-87fe-b4107c5dca04"
+      }
+    ]
+  },
+  "eClass": "sysml:Feature",
+  "id": "0e0dcfc5-fc96-4c4b-a7eb-e154010e0a23"
+}

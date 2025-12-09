@@ -1,2 +1,2 @@
-sysml_v2_api_client>=0.1.0
-pandas==2.2.2
+pandas
+requests

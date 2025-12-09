@@ -1,0 +1,47 @@
+{
+  "data": {
+    "declaredName": "SystemDSM",
+    "declaredShortName": "system",
+    "elementId": "f41c6b2b-1d49-4bc4-9c77-bdf0531aadc0",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "8c8267ed-0ee9-4056-969f-4f9caf31f746",
+          "memberElement": "e6574912-258c-40c1-aa63-69715a8fcd64",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "elementId": "e6574912-258c-40c1-aa63-69715a8fcd64",
+                "ownedRelationship": [
+                  {
+                    "data": {
+                      "elementId": "1f72ed14-60bf-4cc7-ad11-1e625a79bf48",
+                      "redefinedFeature": "sysml:Feature kermllibrary:///eed035b6-25dc-32cd-8fdf-233aa595e17a#4dea7712-ce02-5503-8f54-1e7318e6bf38"
+                    },
+                    "eClass": "sysml:Redefinition",
+                    "id": "4a555832-3254-4d2b-8b61-22a40d8c7ddc"
+                  }
+                ]
+              },
+              "eClass": "sysml:ReferenceUsage",
+              "id": "3987828e-a098-45cb-ae24-a5c95b7ef78d"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "18c9faf4-d276-42e7-ae17-7d954168cb17"
+      },
+      {
+        "data": {
+          "elementId": "206a4630-88ed-4d25-bcf9-fbb6d9895c83",
+          "subclassifier": "f41c6b2b-1d49-4bc4-9c77-bdf0531aadc0",
+          "superclassifier": "sysml:Metaclass kermllibrary:///eed035b6-25dc-32cd-8fdf-233aa595e17a#ce7328c2-6ebb-51b6-8feb-dceb1148085a"
+        },
+        "eClass": "sysml:Subclassification",
+        "id": "f9a508b4-05ea-45da-90e2-c3d0c4ba9696"
+      }
+    ]
+  },
+  "eClass": "sysml:MetadataDefinition",
+  "id": "423ade8c-3065-410c-bf3c-971aed35e48f"
+}

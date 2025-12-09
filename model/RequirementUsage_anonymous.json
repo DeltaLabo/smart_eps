@@ -1,0 +1,27 @@
+{
+  "data": {
+    "elementId": "0bbacad1-9c71-4cc1-9e79-d12877d68fc4",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "bb6a061a-ffbc-48c5-a55b-c6970ee01743",
+          "memberElement": "dea81ffe-1188-4810-8613-dbb7491f4365",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "body": "* The driver wants to activate \n                 * the rocket booster to increase \n                 * the speed extremely.",
+                "elementId": "dea81ffe-1188-4810-8613-dbb7491f4365"
+              },
+              "eClass": "sysml:Documentation",
+              "id": "102b5a40-5edc-4c61-b6d9-6b7bc2cb750c"
+            }
+          ]
+        },
+        "eClass": "sysml:OwningMembership",
+        "id": "327f2842-8cfa-49d7-849f-cfb30763e12d"
+      }
+    ]
+  },
+  "eClass": "sysml:RequirementUsage",
+  "id": "d552abae-078a-4815-8c08-eb4631a1146d"
+}

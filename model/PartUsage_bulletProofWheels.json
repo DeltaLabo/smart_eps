@@ -1,0 +1,19 @@
+{
+  "data": {
+    "declaredName": "bulletProofWheels",
+    "elementId": "37f83cae-0d0e-4d56-ac0b-933484c461b1",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "c6f476ed-4e5d-4157-a4df-aa6ecc62cc08",
+          "redefinedFeature": "8e3004f6-ccb1-4ca8-813b-02f9ba17c2c4",
+          "redefiningFeature": "37f83cae-0d0e-4d56-ac0b-933484c461b1"
+        },
+        "eClass": "sysml:Redefinition",
+        "id": "4447a81b-180c-4e19-9987-90ae404182d1"
+      }
+    ]
+  },
+  "eClass": "sysml:PartUsage",
+  "id": "b99bd9a6-4626-4394-b706-fef57b817d83"
+}

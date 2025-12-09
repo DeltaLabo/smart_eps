@@ -1,0 +1,44 @@
+{
+  "data": {
+    "declaredName": "StatusKind",
+    "elementId": "9fcdddd1-7e9d-4fc0-8a5c-bd363c7eab4f",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "98e37304-d4da-4933-84f3-c5e5d2806f4e",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "safe",
+                "elementId": "6620508c-a2dc-4fbe-aac4-9a721eecbc4e"
+              },
+              "eClass": "sysml:EnumerationUsage",
+              "id": "235a9ff7-edbb-4259-a227-ca8abef94ca9"
+            }
+          ]
+        },
+        "eClass": "sysml:VariantMembership",
+        "id": "63853f39-2f65-444b-a923-6a83604cb482"
+      },
+      {
+        "data": {
+          "elementId": "e3c3ba48-613c-4d44-a3a9-d416720f4886",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "alert",
+                "elementId": "b6df846f-40f3-4823-8aff-d573b6bea22e"
+              },
+              "eClass": "sysml:EnumerationUsage",
+              "id": "47b4e584-282f-410d-bdc4-7d1432142e98"
+            }
+          ]
+        },
+        "eClass": "sysml:VariantMembership",
+        "id": "d5594676-e7f0-49e9-aacc-2162bdf95a2f"
+      }
+    ]
+  },
+  "eClass": "sysml:EnumerationDefinition",
+  "id": "ba38958a-86a2-4f99-9c1f-cda25ad5919a"
+}

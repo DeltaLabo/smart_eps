@@ -1,0 +1,37 @@
+{
+  "data": {
+    "declaredName": "problemStatement",
+    "elementId": "1a2e4b46-c9e6-4f6a-9841-c57e1c5f1016",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "6df64cdb-127b-43a7-815f-a9cb956d0b38",
+          "memberElement": "33d88ecd-511d-4e85-9a85-1d74801acd24",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "body": "The problem solved by the system.",
+                "elementId": "33d88ecd-511d-4e85-9a85-1d74801acd24"
+              },
+              "eClass": "sysml:Documentation",
+              "id": "bd71615a-e814-40c5-955a-205d5273644a"
+            }
+          ]
+        },
+        "eClass": "sysml:OwningMembership",
+        "id": "761f8a32-f818-424d-b0d6-4dad8d6b6f63"
+      },
+      {
+        "data": {
+          "elementId": "69834f53-494e-45ed-8ddd-2292c7b6c331",
+          "type": "sysml:DataType kermllibrary:///b2c6dd37-2084-3ce4-9ce2-580fdf30629c#76028d3d-69a4-5e12-9002-ce403e0244bd",
+          "typedFeature": "1a2e4b46-c9e6-4f6a-9841-c57e1c5f1016"
+        },
+        "eClass": "sysml:FeatureTyping",
+        "id": "8bd5bf65-e243-4ad5-9733-3f3ff39a8954"
+      }
+    ]
+  },
+  "eClass": "sysml:AttributeUsage",
+  "id": "a0db2819-e96c-4e2d-ad89-86a6b5a6484e"
+}

@@ -1,0 +1,162 @@
+{
+  "data": {
+    "declaredName": "bm1",
+    "elementId": "a7497f6f-e140-4315-a891-d15f77868edf",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "c94fb474-f7ba-4dd3-825e-8f6e4919431c",
+          "memberElement": "f8b438d0-5c51-47fa-91b2-8277039f660f",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "batmanDriving",
+                "elementId": "f8b438d0-5c51-47fa-91b2-8277039f660f",
+                "ownedRelationship": [
+                  {
+                    "data": {
+                      "elementId": "794dfcdc-c28e-41b5-b4ab-3551f51a728f",
+                      "memberElement": "59d73935-e5e9-4dad-b316-5dc063fcd02b",
+                      "ownedRelatedElement": [
+                        {
+                          "data": {
+                            "elementId": "59d73935-e5e9-4dad-b316-5dc063fcd02b",
+                            "ownedRelationship": [
+                              {
+                                "data": {
+                                  "elementId": "88d9dc69-f58a-4bd8-8094-4232d568df5d",
+                                  "redefinedFeature": "fd0a226f-191a-4bc7-b32e-3aeb2d52861a",
+                                  "redefiningFeature": "59d73935-e5e9-4dad-b316-5dc063fcd02b"
+                                },
+                                "eClass": "sysml:Redefinition",
+                                "id": "b2fb0c9a-1158-46ed-8829-d65275d63f3e"
+                              },
+                              {
+                                "data": {
+                                  "elementId": "49e9b56e-9186-452d-8ed0-a96827aecae8",
+                                  "type": "4db82a09-b87f-465c-9b63-f9cb01e755a5",
+                                  "typedFeature": "59d73935-e5e9-4dad-b316-5dc063fcd02b"
+                                },
+                                "eClass": "sysml:FeatureTyping",
+                                "id": "8e0e98d8-5bb5-4b04-9f2a-52e5859ca026"
+                              }
+                            ]
+                          },
+                          "eClass": "sysml:ReferenceUsage",
+                          "id": "e9e7a2d1-ba7a-4d43-9270-c318f6b28ae5"
+                        }
+                      ]
+                    },
+                    "eClass": "sysml:FeatureMembership",
+                    "id": "3c220a81-268b-4782-bec4-a32ac3f1ca28"
+                  }
+                ],
+                "portionKind": "timeslice"
+              },
+              "eClass": "sysml:OccurrenceUsage",
+              "id": "701e3b61-43dd-481b-90cc-0a32ef76007c"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "32285876-3658-4f9c-8d98-93515d88d9c2"
+      },
+      {
+        "data": {
+          "elementId": "a065de1d-4198-4de3-8299-836cd19342fe",
+          "ownedRelationship": [
+            {
+              "data": {
+                "elementId": "ee64b1b0-c7f6-4859-9ecb-e8110b544d4d",
+                "source": [
+                  "a065de1d-4198-4de3-8299-836cd19342fe"
+                ]
+              },
+              "eClass": "sysml:SuccessionAsUsage",
+              "id": "f9a22432-c6fe-4661-a38e-cdd93948bddc"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "bb9a7f84-cb69-44f8-9d2d-958aee14ff19"
+      },
+      {
+        "data": {
+          "elementId": "07d62a08-8c81-46af-a154-b2f936820dd7",
+          "memberElement": "3d1d8500-e71c-4503-9d22-7c75fc872f7a",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "charging",
+                "elementId": "3d1d8500-e71c-4503-9d22-7c75fc872f7a",
+                "ownedRelationship": [
+                  {
+                    "data": {
+                      "elementId": "996b85af-bf81-4caf-9a7f-00e32d22c876",
+                      "memberElement": "c54d64fd-74d1-430a-92e7-e4b3ef0277ab",
+                      "ownedRelatedElement": [
+                        {
+                          "data": {
+                            "elementId": "c54d64fd-74d1-430a-92e7-e4b3ef0277ab",
+                            "ownedRelationship": [
+                              {
+                                "data": {
+                                  "elementId": "d61babe8-9034-46c7-9035-3e0e1416e111",
+                                  "redefinedFeature": "fd0a226f-191a-4bc7-b32e-3aeb2d52861a",
+                                  "redefiningFeature": "c54d64fd-74d1-430a-92e7-e4b3ef0277ab"
+                                },
+                                "eClass": "sysml:Redefinition",
+                                "id": "60acf7d6-c3ce-41ad-b3bb-60de6c96afea"
+                              },
+                              {
+                                "data": {
+                                  "elementId": "f0c3fa58-9309-4916-9adb-c6b67c693a44",
+                                  "memberElement": "af7c5680-d9b3-4be0-a4a8-64c6f3e79a74",
+                                  "ownedRelatedElement": [
+                                    {
+                                      "data": {
+                                        "elementId": "af7c5680-d9b3-4be0-a4a8-64c6f3e79a74"
+                                      },
+                                      "eClass": "sysml:NullExpression",
+                                      "id": "3f325422-e33d-4a9f-8597-d12c8ffead41"
+                                    }
+                                  ]
+                                },
+                                "eClass": "sysml:FeatureValue",
+                                "id": "307439fb-de36-4674-8b10-0cf7e2358019"
+                              }
+                            ]
+                          },
+                          "eClass": "sysml:ReferenceUsage",
+                          "id": "81919ad2-aeb5-44c8-893b-cc6028c6bb6d"
+                        }
+                      ]
+                    },
+                    "eClass": "sysml:FeatureMembership",
+                    "id": "134299df-039c-4a2e-a628-c336acba5a76"
+                  }
+                ],
+                "portionKind": "timeslice"
+              },
+              "eClass": "sysml:OccurrenceUsage",
+              "id": "d91c6468-072a-4533-8128-3b0fc1590c55"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "fc4e5933-1766-451d-87e1-baedce7d778b"
+      },
+      {
+        "data": {
+          "elementId": "59fa06f5-c545-4a4f-99c5-afbc07c2cbef",
+          "type": "c18cf0a2-6cec-4bb1-b76f-f9a783e91c72",
+          "typedFeature": "a7497f6f-e140-4315-a891-d15f77868edf"
+        },
+        "eClass": "sysml:FeatureTyping",
+        "id": "804792b1-6175-4b30-aa56-68786e485f5a"
+      }
+    ]
+  },
+  "eClass": "sysml:Usage",
+  "id": "6efe93c5-a756-439d-a6a2-4deefca01e2b"
+}

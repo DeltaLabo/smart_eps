@@ -1,0 +1,19 @@
+{
+  "data": {
+    "declaredName": "wheels",
+    "elementId": "8e3004f6-ccb1-4ca8-813b-02f9ba17c2c4",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "f2ebff21-8d43-4c05-986a-05eda4405891",
+          "type": "7885e9b3-6dff-4e0c-af25-e336bb494638",
+          "typedFeature": "8e3004f6-ccb1-4ca8-813b-02f9ba17c2c4"
+        },
+        "eClass": "sysml:FeatureTyping",
+        "id": "9da6dde6-20f1-47d2-bb5f-9ebaee9e1d74"
+      }
+    ]
+  },
+  "eClass": "sysml:PartUsage",
+  "id": "58be76fe-d020-4439-953d-37cbc86800b5"
+}

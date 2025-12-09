@@ -1,0 +1,105 @@
+{
+  "data": {
+    "declaredName": "batmobileSpecification",
+    "elementId": "f996c3f5-f834-4717-9afa-c9803d492935",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "f887df13-ec1f-4ce7-a66a-90b92a6ed1fa",
+          "memberElement": "d26badc6-9db1-4a6c-97ab-932d0542a996",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "batmobileMaxSpeed",
+                "declaredShortName": "REQ42",
+                "elementId": "d26badc6-9db1-4a6c-97ab-932d0542a996",
+                "ownedRelationship": [
+                  {
+                    "data": {
+                      "elementId": "62769cfc-5377-4bfd-82fc-ab40b5215b65",
+                      "memberElement": "1a82606d-91f3-42a6-8442-8fe1ec655f14",
+                      "ownedRelatedElement": [
+                        {
+                          "data": {
+                            "elementId": "1a82606d-91f3-42a6-8442-8fe1ec655f14",
+                            "ownedRelationship": [
+                              {
+                                "data": {
+                                  "elementId": "05c4f4e9-5ca5-4337-a427-7ab91a712a27",
+                                  "redefinedFeature": "403e5724-4f62-448e-b34c-dd04de6fbf31",
+                                  "redefiningFeature": "1a82606d-91f3-42a6-8442-8fe1ec655f14"
+                                },
+                                "eClass": "sysml:Redefinition",
+                                "id": "63859e72-cf34-4868-bcf2-00ca3e30da52"
+                              },
+                              {
+                                "data": {
+                                  "elementId": "ff6bb934-f97d-4caf-9f29-6fbea107dd45",
+                                  "memberElement": "355c4637-0397-4db4-8024-261de2215cfc",
+                                  "ownedRelatedElement": [
+                                    {
+                                      "data": {
+                                        "elementId": "355c4637-0397-4db4-8024-261de2215cfc",
+                                        "operator": "["
+                                      },
+                                      "eClass": "sysml:OperatorExpression",
+                                      "id": "2ca8dae1-adc5-4d5d-bfd2-8a96a2d139e6"
+                                    }
+                                  ]
+                                },
+                                "eClass": "sysml:FeatureValue",
+                                "id": "9d5aca5b-a3b9-4ce5-84e3-f66d94a500b3"
+                              }
+                            ]
+                          },
+                          "eClass": "sysml:ReferenceUsage",
+                          "id": "60e12751-1c0e-4dbc-b4ef-e3a3a42f611c"
+                        }
+                      ]
+                    },
+                    "eClass": "sysml:FeatureMembership",
+                    "id": "e6828859-3b07-4895-aaf2-bafbc5fc3960"
+                  },
+                  {
+                    "data": {
+                      "elementId": "f0ddc03a-7c8b-4c8b-b917-4f349b5fa0a1",
+                      "type": "e1ccd5ce-6040-4577-b803-bdd566c69458",
+                      "typedFeature": "d26badc6-9db1-4a6c-97ab-932d0542a996"
+                    },
+                    "eClass": "sysml:FeatureTyping",
+                    "id": "ea42a7da-e29f-46b5-903c-7dbe815bea99"
+                  }
+                ]
+              },
+              "eClass": "sysml:RequirementUsage",
+              "id": "1c70a51a-75d8-4f8e-9201-9618e3b7dcff"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "9660fc62-b186-4452-bd18-1fca9b21aff1"
+      },
+      {
+        "data": {
+          "elementId": "f86e5557-96b6-4b4b-b4b0-20789f791f63",
+          "memberElement": "1c830113-e539-412a-96ea-edba9c25261d",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "batmobileAcceleration",
+                "declaredShortName": "REQ43",
+                "elementId": "1c830113-e539-412a-96ea-edba9c25261d"
+              },
+              "eClass": "sysml:RequirementUsage",
+              "id": "19bdc6c3-cf3e-4e77-9a8b-3d5e3ec6647f"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "2885e210-d287-4ffc-8f5e-dc8854915412"
+      }
+    ]
+  },
+  "eClass": "sysml:RequirementUsage",
+  "id": "8148eb13-ae8e-4a4e-b4b7-44740f381332"
+}

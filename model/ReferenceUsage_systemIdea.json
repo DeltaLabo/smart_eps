@@ -1,0 +1,38 @@
+{
+  "data": {
+    "declaredName": "systemIdea",
+    "elementId": "842b7a17-e362-4c58-ad81-f33e77c1cb32",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "2695501a-d6ec-4f78-8df6-ba9f6194796a",
+          "redefinedFeature": "4091a44f-a879-4907-9bb6-ec509b340441",
+          "redefiningFeature": "842b7a17-e362-4c58-ad81-f33e77c1cb32"
+        },
+        "eClass": "sysml:Redefinition",
+        "id": "abb86e0c-06ea-4d9e-8c7f-2ee31327f13c"
+      },
+      {
+        "data": {
+          "elementId": "17fc7acf-45b8-41a6-93d3-0b498c397f52",
+          "isInitial": true,
+          "memberElement": "3fae4334-4702-416e-8df7-bc2f0f62325c",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "elementId": "3fae4334-4702-416e-8df7-bc2f0f62325c",
+                "value": "The Batmobile is a black vehicle..."
+              },
+              "eClass": "sysml:LiteralString",
+              "id": "e4eddb88-8e5b-490d-baa7-a6cf4f6fb74f"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureValue",
+        "id": "2aecf066-e38e-49e1-befa-0c88b13b9ae0"
+      }
+    ]
+  },
+  "eClass": "sysml:ReferenceUsage",
+  "id": "1312cfca-8555-47a1-be93-2b9093d08522"
+}

@@ -1,0 +1,19 @@
+{
+  "data": {
+    "declaredName": "batmobileDesignV23",
+    "elementId": "ebc9ade6-6be3-415b-ad7d-bdc951b3a825",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "ae81b8c6-2fc8-4f52-a353-0648977df134",
+          "type": "c18cf0a2-6cec-4bb1-b76f-f9a783e91c72",
+          "typedFeature": "ebc9ade6-6be3-415b-ad7d-bdc951b3a825"
+        },
+        "eClass": "sysml:FeatureTyping",
+        "id": "cf51b196-9011-46a1-bf4b-99dde8e16e22"
+      }
+    ]
+  },
+  "eClass": "sysml:Usage",
+  "id": "a4de437e-e034-4673-9055-89dc86709085"
+}

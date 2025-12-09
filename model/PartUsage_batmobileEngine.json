@@ -1,0 +1,56 @@
+{
+  "data": {
+    "declaredName": "batmobileEngine",
+    "elementId": "c011eeda-201b-44af-9d28-8d2702f93922",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "b4f596f7-bad9-4930-ac32-d2c5ca34768a",
+          "memberElement": "9d5b827a-a752-4395-aeb7-8b4061c12cfd",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "enginePort",
+                "elementId": "9d5b827a-a752-4395-aeb7-8b4061c12cfd",
+                "ownedRelationship": [
+                  {
+                    "data": {
+                      "elementId": "d109e960-c1bc-4966-b63a-eef3f2e17387",
+                      "typedFeature": "9d5b827a-a752-4395-aeb7-8b4061c12cfd"
+                    },
+                    "eClass": "sysml:ConjugatedPortTyping",
+                    "id": "a2ec1b2a-6b1c-403d-8261-5f3c5be3b2bc"
+                  }
+                ]
+              },
+              "eClass": "sysml:PortUsage",
+              "id": "ee62626e-fe24-4f48-9e6b-024fb366137d"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "814641aa-cc1d-4a08-82da-111292be2f26"
+      },
+      {
+        "data": {
+          "elementId": "d4e876af-4156-41f1-ac3d-61877da42a34",
+          "type": "00bf6c7f-09d0-42d6-b93e-8d140ea3d2d4",
+          "typedFeature": "c011eeda-201b-44af-9d28-8d2702f93922"
+        },
+        "eClass": "sysml:FeatureTyping",
+        "id": "2666aa3d-1cab-4947-b130-32590f2811fc"
+      },
+      {
+        "data": {
+          "elementId": "d4dc3bc9-9a40-47fa-8fec-c4ef5ea910b6",
+          "redefinedFeature": "bbf56bb0-fc53-4dbc-add3-f86f5cb14f0e",
+          "redefiningFeature": "c011eeda-201b-44af-9d28-8d2702f93922"
+        },
+        "eClass": "sysml:Redefinition",
+        "id": "3547ac15-ae18-475f-9bcd-9cdccd11ea9f"
+      }
+    ]
+  },
+  "eClass": "sysml:PartUsage",
+  "id": "d6a5a520-bad2-4154-a3eb-845225c57956"
+}

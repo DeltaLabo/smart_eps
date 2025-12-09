@@ -1,0 +1,19 @@
+{
+  "data": {
+    "declaredName": "maxSpeed",
+    "elementId": "403e5724-4f62-448e-b34c-dd04de6fbf31",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "8c1b9030-6b74-4f50-ac48-a87260837a81",
+          "type": "sysml:AttributeDefinition sysmllibrary:///a269cb9d-5a98-33e9-95e8-8701328ddda6#09289b65-bf44-5a6d-91db-feabdbe6d1fc",
+          "typedFeature": "403e5724-4f62-448e-b34c-dd04de6fbf31"
+        },
+        "eClass": "sysml:FeatureTyping",
+        "id": "d84e8289-033a-4877-ba95-426f2f97c0d6"
+      }
+    ]
+  },
+  "eClass": "sysml:AttributeUsage",
+  "id": "83a3e30e-b607-4597-9290-ed58aeec3eb9"
+}

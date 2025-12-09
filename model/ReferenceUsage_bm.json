@@ -1,0 +1,19 @@
+{
+  "data": {
+    "declaredName": "bm",
+    "elementId": "7e26cdfc-fa77-439c-a252-21be7352df38",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "c9569e4e-38d6-40d0-841a-05ac1ebd17a2",
+          "type": "c18cf0a2-6cec-4bb1-b76f-f9a783e91c72",
+          "typedFeature": "7e26cdfc-fa77-439c-a252-21be7352df38"
+        },
+        "eClass": "sysml:FeatureTyping",
+        "id": "3872ff80-53ec-4eb2-b064-fac5e3b69b86"
+      }
+    ]
+  },
+  "eClass": "sysml:ReferenceUsage",
+  "id": "69fc5a6b-0a31-41e2-b48c-82fa6d8c0526"
+}

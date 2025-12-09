@@ -1,0 +1,39 @@
+{
+  "data": {
+    "declaredName": "PowerIP",
+    "elementId": "478757c7-80df-465c-83a7-70524d6e2726",
+    "ownedRelationship": [
+      {
+        "data": {
+          "elementId": "b9971ab2-61df-4a7a-bbca-c6de58e97cea",
+          "memberElement": "f85fbf09-ea5d-4fbf-8eef-a2cfb3903d43",
+          "ownedRelatedElement": [
+            {
+              "data": {
+                "declaredName": "power",
+                "elementId": "f85fbf09-ea5d-4fbf-8eef-a2cfb3903d43",
+                "ownedRelationship": [
+                  {
+                    "data": {
+                      "elementId": "128d5922-e87f-46a7-a4b6-0d8b0c71f735",
+                      "type": "adc7816b-999c-462d-b68e-27be817f9aa1",
+                      "typedFeature": "f85fbf09-ea5d-4fbf-8eef-a2cfb3903d43"
+                    },
+                    "eClass": "sysml:FeatureTyping",
+                    "id": "68fd8acd-d734-4a64-b191-40e8d83010a3"
+                  }
+                ]
+              },
+              "eClass": "sysml:ItemUsage",
+              "id": "09c5ca3e-4c58-4149-9f67-c1911291c9d4"
+            }
+          ]
+        },
+        "eClass": "sysml:FeatureMembership",
+        "id": "32676d9b-7cef-4ee8-b335-98447d5cf2cb"
+      }
+    ]
+  },
+  "eClass": "sysml:PortDefinition",
+  "id": "0bf82828-bd97-4365-a109-ed7e384e9934"
+}
