@@ -1,16 +1,29 @@
+# Smart EPS
 
+## Goal
+
+Developing of a Electrical Power System for CubeSats that enables mission automation by providing advanced functionality and telemetry
+
+## sysON Server
+
+[Link to server](http://localhost:8080)
 
 ## Initial folder structure
-satellite-eps/
+```text
+smartEPS/
 ├─ docs/                     # high-level docs, reviews, meeting notes
 │  ├─ icd/                   # Interface Control Documents
 │  └─ adr/                   # Architecture Decision Records
 ├─ model/                    # SysML v2 + scripts
-│  ├─ src/                   # *.sysml textual sources (KerML/SysMLv2)
-│  ├─ views/                 # view definitions, diagrams, queries
-│  ├─ exports/               # auto-generated: JSON/XMI/HTML reports
-│  ├─ test/                  # model validation checks
-│  └─ tools/                 # Python: parsing, CI checks, codegen
+│   ├─ context/
+│   ├─ needs/
+│   ├─ requirements/
+│   │   ├─ system/
+│   │   └─ eps/
+│   ├─ logical/
+│   ├─ physical/
+│   ├─ behavior/
+│   └─ verification/
 ├─ electronics/              # EE CAD and fabrication artifacts
 │  ├─ pcb/                   # CAD projects per board
 │  ├─ outputs/               # Gerbers, IPC-2581, ODB++, pick&place

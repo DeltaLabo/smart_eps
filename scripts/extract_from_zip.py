@@ -1,8 +1,13 @@
 import zipfile
+import shutil
 from pathlib import Path
 
 # Folder that contains your SysON exports
 SYSON_DIR = Path("sysON")
+
+# DELETE TARGET:
+PROJECT_DIR = SYSON_DIR / "smartEPS"   # <--- delete this folder before extract
+
 
 def extract_zip(zip_path: Path, dest_dir: Path) -> None:
     """Extract a single zip file into dest_dir."""
@@ -15,6 +20,16 @@ def main():
     if not SYSON_DIR.exists():
         print(f"❌ Folder '{SYSON_DIR}' not found. Create it and put your SysON .zip files there.")
         return
+    
+    # -----------------------------------------
+    #   DELETE sysON/smartEPS BEFORE EXTRACTING
+    # -----------------------------------------
+    if PROJECT_DIR.exists():
+        print(f"🗑️  Deleting old folder: {PROJECT_DIR}")
+        shutil.rmtree(PROJECT_DIR)
+    else:
+        print(f"ℹ️ No previous '{PROJECT_DIR.name}' folder found. Starting fresh.")
+    # -----------------------------------------
 
     zip_files = sorted(SYSON_DIR.glob("*.zip"))
 

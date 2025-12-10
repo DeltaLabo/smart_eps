@@ -1,9 +1,0 @@
-{
-  "data": {
-    "elementId": "8001dd55-e18d-4f61-8dd6-8c20e503de4c",
-    "subsettedFeature": "8e3004f6-ccb1-4ca8-813b-02f9ba17c2c4",
-    "subsettingFeature": "4e7ed0de-c755-47ed-b71f-b88a30489fd9"
-  },
-  "eClass": "sysml:Subsetting",
-  "id": "bae53102-f687-4a25-a05d-9f5599caceab"
-}

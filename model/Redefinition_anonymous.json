@@ -1,8 +1,0 @@
-{
-  "data": {
-    "elementId": "1f72ed14-60bf-4cc7-ad11-1e625a79bf48",
-    "redefinedFeature": "sysml:Feature kermllibrary:///eed035b6-25dc-32cd-8fdf-233aa595e17a#4dea7712-ce02-5503-8f54-1e7318e6bf38"
-  },
-  "eClass": "sysml:Redefinition",
-  "id": "4a555832-3254-4d2b-8b61-22a40d8c7ddc"
-}
