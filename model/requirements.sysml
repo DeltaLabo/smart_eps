@@ -1,24 +1,16 @@
-package 'EPS Requirements'
+package 'EPS Requirement Definitions'
 {
     // =====================================
     // Imports
     // =====================================
 
-    private import SI::*;
-    private import ISQ::*;
-    private import MeasurementReferences::*;
-    private import ScalarValues::*;
+    public import SI::*;
+    public import ISQ::*;
+    public import MeasurementReferences::*;
+    public import ScalarValues::*;
+    public import 'Stakeholders'::*;
     public import 'System Definitions'::*;
-
-    // =====================================
-    // Atributes
-    // =====================================
-
-    attribute def Rail_Voltage :> ElectricPotentialValue;
-    attribute def Rail_Voltage_Tolerance :> ScalarValues::Real{
-        unit = one;
-    }
-    attribute def Rail_Current :> ElectricCurrentValue;
+    public import 'EPS parts'::*;
 
     // =====================================
     // Definitions
@@ -32,42 +24,30 @@ package 'EPS Requirements'
             * value. 
             */
         subject pr : Power_Rail;
-        stakeholder dt : EPS_team;
+        stakeholder et : EPS_team;
         attribute atr_rail_voltage : Rail_Voltage;
         attribute atr_rail_voltage_tolerance : Rail_Voltage_Tolerance;
         attribute atr_rail_current : Rail_Current;
-        require constraint { pr.actualVoltage > (atr_rail_voltage * (1 - atr_rail_voltage_tolerance) ) }
-        require constraint { pr.actualVoltage < (atr_rail_voltage * (1 + atr_rail_voltage_tolerance) ) }
-        require constraint { pr.actualCurrent <= atr_rail_current }
+        require constraint { pr.actual_voltage > (atr_rail_voltage * (1 - atr_rail_voltage_tolerance) ) }
+        require constraint { pr.actual_voltage < (atr_rail_voltage * (1 + atr_rail_voltage_tolerance) ) }
+        require constraint { pr.actual_current <= atr_rail_current }
     }
-    item def EPS_team {
-        doc /* The team responsible for
-            * developing and maintaining
-            * the EPS system.
-            */
-    }
-    item def Power_Rail{
-        doc /* A power rail that provides
-            * electrical power to the system.
-            */
-        attribute actualVoltage : ElectricPotentialValue;
-        attribute actualCurrent : ElectricCurrentValue;
-    }
-
+}
+package 'Smart EPS Requirements'
+{
     // =====================================
-    // Smart EPS specification
+    // Imports
     // =====================================
+    private import 'EPS Requirement Definitions'::*;
 
-    requirement spsSpecification {
-        requirement <'SPS01.01'> powerRail1 : 'Power Rail Requirement' {
-                attribute :>> atr_rail_voltage = 5.0 [V];
-                attribute :>> atr_rail_voltage_tolerance = 0.1 [one];
-                attribute :>> atr_rail_current = 2.0 [A];
-        }
-        requirement <'SPS01.02'> powerRail2 : 'Power Rail Requirement' {
-                attribute :>> atr_rail_voltage = 3.3 [V];
-                attribute :>> atr_rail_voltage_tolerance = 0.1 [one];
-                attribute :>> atr_rail_current = 1.0 [A];
-        }
+    requirement <'SPS01.01'> powerRail1 : 'Power Rail Requirement' {
+            attribute :>> atr_rail_voltage = 5.0 [V];
+            attribute :>> atr_rail_voltage_tolerance = 0.1 [one];
+            attribute :>> atr_rail_current = 2.0 [A];
+    }
+    requirement <'SPS01.02'> powerRail2 : 'Power Rail Requirement' {
+            attribute :>> atr_rail_voltage = 3.3 [V];
+            attribute :>> atr_rail_voltage_tolerance = 0.1 [one];
+            attribute :>> atr_rail_current = 1.0 [A];
     }
 }
