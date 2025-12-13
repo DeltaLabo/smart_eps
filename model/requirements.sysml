@@ -39,15 +39,17 @@ package 'Smart EPS Requirements'
     // Imports
     // =====================================
     private import 'EPS Requirement Definitions'::*;
+    private import 'Smart EPS Parts'::*;
 
     requirement <'SPS01.01'> powerRail1 : 'Power Rail Requirement' {
-            attribute :>> atr_rail_voltage = 5.0 [V];
-            attribute :>> atr_rail_voltage_tolerance = 0.1 [one];
-            attribute :>> atr_rail_current = 2.0 [A];
+        subject :>> pr = sps.rail5V0;
+        attribute :>> atr_rail_voltage = 5.0 [V];
+        attribute :>> atr_rail_voltage_tolerance = 0.1 [one];
+        attribute :>> atr_rail_current = 2.0 [A];
     }
     requirement <'SPS01.02'> powerRail2 : 'Power Rail Requirement' {
-            attribute :>> atr_rail_voltage = 3.3 [V];
-            attribute :>> atr_rail_voltage_tolerance = 0.1 [one];
-            attribute :>> atr_rail_current = 1.0 [A];
+        attribute :>> atr_rail_voltage = 3.3 [V];
+        attribute :>> atr_rail_voltage_tolerance = 0.1 [one];
+        attribute :>> atr_rail_current = 1.0 [A];
     }
 }
