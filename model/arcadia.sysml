@@ -15,7 +15,11 @@ package Arcadia {
     use case def OperationalCapability;
 
     action def OperationalActivity;
-    action def OperationalInteraction;
+    connection def OperationalInteraction {
+        in In : OperationalActivity;
+        out Out : OperationalActivity;
+        in : ExchangeItem;
+    }
     action def OperationalProcess;
     action def OperationalScenario;
 
@@ -30,12 +34,12 @@ package Arcadia {
         attribute isHuman : Boolean;
     }
     part def OperationalActor :> OperationalEntity;
-     // BehavioralExchangeScenario
-     // CommunicationMeans
+    // *BehavioralExchangeScenario
+    // *CommunicationMeans
     
     // Data and inteface model
-     // Class
-     // ExchangeItem
+    // *Class
+    // *ExchangeItem
     
     // =====================================
     // System needs analysis (23.3.2)
@@ -43,50 +47,109 @@ package Arcadia {
 
     // Functional concepts
 
-     // SystemMission
-     // SystemCapability
+    // *SystemMission
+    // *SystemCapability
     action def SystemFunction;
-     // FunctionalPort
-     // FunctionalExchange
-     // FuntionalChain
-     // FunctionalScenario
+    // *FunctionalPort
+    // *FunctionalExchange
+    // *FuntionalChain
+    // *FunctionScenario
 
-
-    item def SystemMode;
-    item def SystemState;
-    item def SystemTransition;
-    item def SystemConfiguration;
-    item def SystemSituation;
+    // *Mode
+    // *State
+    // *Transition
+    // *Configuration
+    // *Situation
 
     // Structural concepts
-     // Actor
-     // System
-    port def BehavioralPort;
-    item def BehavioralExchange;
-     // BehavioralExchangeScenario
+    // *Actor
+    // *System
+    // *BehavioralPort 
+    // *BehavioralExchange
+    // *BehavioralExchangeScenario
     
-     // Actor
-     // System
-    port def PhysicalPort;
-    part def PhysicalLink;
+    // *Actor
+    // *System
+    // *PhysicalPort
+    // *PhysicalLink
 
     // Data and inteface model
-     // Class
-     // ExchangeItem
-     // Interface
+    // *Class
+    // *ExchangeItem
+    // *Interface
 
     // =====================================
     // Logical architecture (23.3.3)
     // =====================================   
     
     // Functional concepts
-     // SystemMission
-     // SystemCapability
+    // *SystemMission
+    // *SystemCapability
     action def LogicalFunction;
-     // FunctionalPort
-     // FunctionalExchange
-     // FuntionalChain
-     // FunctionalScenario
+    // *FunctionalPort
+    // *FunctionalExchange
+    // *FuntionalChain
+    // *FunctionScenario
+    
+    // *Mode
+    // *State
+    // *Transition
+    // *Configuration
+    // *Situation
+
+    // Structural concepts
+    // *Actor
+    // *System
+    // *BehavioralPort 
+    // *BehavioralExchange
+    item def LogicalComponent;
+    // *BehavioralExchangeScenario
+    item def FunctionalPath;
+
+    // *Actor
+    // *System
+    // *PhysicalPort
+    // *PhysicalLink
+
+    // =====================================
+    // Physical architecture (23.3.4)
+    // ===================================== 
+
+    // Functional concepts
+    // *SystemMission
+    // *SystemCapability
+    action def PhysicalFunction;
+    // *FunctionalPort
+    // *FunctionalExchange
+    // *FuntionalChain
+    // *FunctionScenario
+
+    // *Mode
+    // *State
+    // *Transition
+    // *Configuration
+    // *Situation
+
+    // Structual concepts
+    // *Actor
+    // *System
+    // *BehavioralPort 
+    // *BehavioralExchange
+    item def BehavioralComponent;
+    // *BehavioralExchangeScenario
+    // *FunctionalPath
+
+    // *Actor
+    // *System
+    // *PhysicalPort
+    // *PhysicalLink
+    item def HostingPhysicalComponent;
+    item def PhysicalPath;
+
+    // Data and inteface model
+    // *Class
+    // *ExchangeItem
+    // *Interface
 
     // =====================================
     // Shared
@@ -96,21 +159,28 @@ package Arcadia {
     port def FunctionalPort;
     item def FunctionalExchange;
     action def FuntionalChain;
-    action def FunctionalScenario;
-    
+    action def FunctionScenario;
+
+    item def Mode;
+    item def State;
+    item def Transition;
+    item def Configuration;
+    item def Situation;
+
     // Structural concepts
     use case def SystemMission;
     use case def SystemCapability;
     action def BehavioralExchangeScenario;
     part def Actor;
     part def System;
+    port def BehavioralPort;
+    item def BehavioralExchange;
+    port def PhysicalPort;
+    part def PhysicalLink;
     
     // Data and inteface model
-    item def OperationalClass;
-    item def ExcangeItem;
-
-    
-
-
+    item def Class;
+    item def ExchangeItem;
+    item def Interface;
 
 }
