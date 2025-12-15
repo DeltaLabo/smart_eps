@@ -16,18 +16,18 @@ package Arcadia {
 
     action def OperationalActivity;
     connection def OperationalInteraction {
-        in In : OperationalActivity;
-        out Out : OperationalActivity;
-        in : ExchangeItem;
+        end fromOA : OperationalActivity;
+        end toOA : OperationalActivity;
+        connection connect fromOA to toOA;
     }
-    action def OperationalProcess;
-    action def OperationalScenario;
+    action def OperationalProcess :> OperationalActivity;
+    action def OperationalScenario :> OperationalProcess;
 
-    item def OperationalMode;
-    item def OperationalState;
-    item def OperationalTransition;
-    item def OperationalConfiguration;
-    item def OperationalSituation;
+    // *Mode
+    // *State
+    // *Transition
+    // *Configuration
+    // *Situation
 
     // Structural concepts
     part def OperationalEntity {
