@@ -123,6 +123,7 @@ package OperationalAnalysisDefinitions
 
     action def ManagePowerUsageByPriority :> OperationalActivity{
         in telemetryProcessed : InternalBusTelemetry;
+        in commandIn : InternalBusCommand;
         out switchAndControl : PowerSwitchAndControl;
     }
 
@@ -133,7 +134,12 @@ package OperationalAnalysisDefinitions
 
     action def ProcessCommands :> OperationalActivity{
         in commandIn : GroundCommand;
-        out commandOut : InternalBusCommand;
+        out commandProcessed : InternalBusCommand;
+    }
+
+    action def SendTelemetry :> OperationalActivity{
+        in telemetryIn : InternalBusTelemetry;
+        out telemetryOut : TelemetryReport;
     }
 
     // PowerConsumers

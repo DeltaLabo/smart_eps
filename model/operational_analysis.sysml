@@ -16,7 +16,8 @@ package 'Operational Analysis'
 
     part spacecraftBus : SpacecraftBus {
         in item environment : EnvironmentConditions;
-        in item telemetry : InternalBusTelemetry;
+        in item internalTelemetry : InternalBusTelemetry;
+        in item commandIn : GroundCommand;
         perform action harvestSolar : HarvestSolarEnergy{
             in environment : EnvironmentConditions;
             out powerOut: Power;
@@ -31,15 +32,25 @@ package 'Operational Analysis'
             in powerIn : Power;
             out powerOut : Power;
         }
+        perform action processCommands : ProcessCommands {
+            in commandIn : GroundCommand;
+            out commandProcessed : InternalBusCommand;
+        }
         perform action monitorPowerState : MonitorPowerAndEnergyState {
             in telemetryRaw : InternalBusTelemetry;
             out telemetryProcessed : InternalBusTelemetry;
         }
         perform action managePowerUsage : ManagePowerUsageByPriority {
             in telemetryProcessed : InternalBusTelemetry;
+            in commandIn : InternalBusCommand;
             out switchAndControl : PowerSwitchAndControl;
         }
+        perform action sendTelemetry : SendTelemetry {
+            in telemetryIn : InternalBusTelemetry;
+            out telemetryOut : TelemetryReport;
+        }
         out item powerOut : Power;
+        out item telemetry : TelemetryReport;
 
         binding bind harvestSolar.environment = environment;
         binding bind harvestSolar.powerOut = storeEnergy.powerIn;
@@ -47,9 +58,13 @@ package 'Operational Analysis'
         binding bind storeEnergy.powerOut = distributePower.powerIn;
         binding bind storeEnergy.environment = environment;
         binding bind distributePower.powerOut = powerOut;
-        binding bind monitorPowerState.telemetryRaw = telemetry;
+        binding bind processCommands.commandIn = commandIn;
+        binding bind processCommands.commandProcessed = managePowerUsage.commandIn;
+        binding bind monitorPowerState.telemetryRaw = internalTelemetry;
         binding bind monitorPowerState.telemetryProcessed = managePowerUsage.telemetryProcessed;
         binding bind managePowerUsage.switchAndControl = distributePower.switchAndControl;
+        binding bind sendTelemetry.telemetryIn = monitorPowerState.telemetryProcessed;
+        binding bind sendTelemetry.telemetryOut = telemetry;
     }
 
     part powerConsumers : PowerConsumers {
@@ -103,10 +118,12 @@ package 'Operational Analysis'
     // =====================================  
 
     connect spacecraftBus.powerOut to powerConsumers.powerIn;
-    connect spacecraftBus.telemetry to spacecraftBus.telemetry;
+    connect spacecraftBus.internalTelemetry to spacecraftBus.internalTelemetry;
     connect missionOperators.command to groundSegment.commandIn;
     connect groundSegment.telemetryOut to missionOperators.telemetry;
     connect spaceEnvironment.environment to spacecraftBus.environment;
+    connect groundSegment.commandOut to spacecraftBus.commandIn;
+    connect spacecraftBus.telemetry to groundSegment.telemetryIn;
 
 
     // part Ejemplo {
