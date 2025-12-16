@@ -124,21 +124,4 @@ package 'Operational Analysis'
     connect spaceEnvironment.environment to spacecraftBus.environment;
     connect groundSegment.commandOut to spacecraftBus.commandIn;
     connect spacecraftBus.telemetry to groundSegment.telemetryIn;
-
-
-    // part Ejemplo {
-    //     part spacecraft : Spacecraft{
-    //         port power;
-    //     }
-    //     part powerConsumers : PowerConsumers{
-    //         port power;
-    //     }
-    //     connection PowerRequestInteraction : OperationalInteraction connect
-    //         powerConsumers.power to spacecraft.power {
-    //             flow of power : Power {
-    //                 end ::> fromOA;
-    //                 end ::> toOA;
-    //             }
-    //         }
-    // }
 }
