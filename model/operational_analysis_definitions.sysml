@@ -56,9 +56,10 @@ package OperationalAnalysisDefinitions
     // Exchange items
     // =====================================
 
-    item def Power :> ExchangeItem;
     item def EnvironmentConditions :> ExchangeItem;
+    item def Power :> ExchangeItem;
     item def InternalBusTelemetry :> ExchangeItem;
+    item def InternalBusCommand :> ExchangeItem;
     item def PowerSwitchAndControl :> ExchangeItem;
     item def GroundCommand :> ExchangeItem;
     item def TelemetryReport :> ExchangeItem;
@@ -68,8 +69,20 @@ package OperationalAnalysisDefinitions
     // Operational Entities
     // =====================================
 
+    part def SpaceEnvironment :> OperationalEntity {
+        doc /* Operational environment
+            */
+        attribute :>> isHuman = false;
+    }
+
     part def SpacecraftBus :> OperationalEntity {
         doc /* The spacecraft bus, includes solar arrays and battery
+            */
+        attribute :>> isHuman = false;
+    }
+
+    part def PowerConsumers :> OperationalEntity {
+        doc /* Power-consuming subsystems and payloads
             */
         attribute :>> isHuman = false;
     }
@@ -82,18 +95,6 @@ package OperationalAnalysisDefinitions
 
     part def GroundSegment :> OperationalEntity {
         doc /* Telemetry, tracking and command infrastructure
-            */
-        attribute :>> isHuman = false;
-    }
-
-    part def PowerConsumers :> OperationalEntity {
-        doc /* Power-consuming subsystems and payloads
-            */
-        attribute :>> isHuman = false;
-    }
-
-    part def SpaceEnvironment :> OperationalEntity {
-        doc /* Operational environment
             */
         attribute :>> isHuman = false;
     }
@@ -130,6 +131,16 @@ package OperationalAnalysisDefinitions
         out telemetryProcessed : InternalBusTelemetry;
     }
 
+    action def ProcessCommands :> OperationalActivity{
+        in commandIn : GroundCommand;
+        out commandOut : InternalBusCommand;
+    }
+
+    // PowerConsumers
+    action def ConsumeElectricalPower :> OperationalActivity{
+        in power : Power;
+    }
+
     // MissionOperators
     action def CommandPowerPolicy :> OperationalActivity{
         in telemetryReport : TelemetryReport;
@@ -145,11 +156,6 @@ package OperationalAnalysisDefinitions
     action def ReceiveTelemetry :> OperationalActivity{
         in telemetryReportIn : TelemetryReport;
         out telemetryReportOut : TelemetryReport;
-    }
-
-    // PowerConsumers
-    action def ConsumeElectricalPower :> OperationalActivity{
-        in power : Power;
     }
 
     // SpaceEnvironment

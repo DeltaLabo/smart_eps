@@ -15,23 +15,8 @@ package 'Operational Analysis'
     // // =====================================  
 
     part spacecraftBus : SpacecraftBus {
-        // port powerPort {
-        //     out item power : Power;
-        // }
-        // port powerControlPort {
-        //     out item powerSAC : PowerSwitchingAndControl;
-        // }
-        // port environmentConditionsPort {
-        //     in item environmentConditions : EnvironmentConditions;
-        // }
-        // port internalBusTelemetryProcessPort {
-        //     in item internalBusTelemetryProcessIn : InternalBusTelemetry;
-        //     out item internalBusTelemetryProcessOut : InternalBusTelemetry;
-        // }
         in item environment : EnvironmentConditions;
         in item telemetry : InternalBusTelemetry;
-
-
         perform action harvestSolar : HarvestSolarEnergy{
             in environment : EnvironmentConditions;
             out powerOut: Power;
@@ -54,8 +39,6 @@ package 'Operational Analysis'
             in telemetryProcessed : InternalBusTelemetry;
             out switchAndControl : PowerSwitchAndControl;
         }
-
-
         out item powerOut : Power;
 
         binding bind harvestSolar.environment = environment;
@@ -67,18 +50,52 @@ package 'Operational Analysis'
         binding bind monitorPowerState.telemetryRaw = telemetry;
         binding bind monitorPowerState.telemetryProcessed = managePowerUsage.telemetryProcessed;
         binding bind managePowerUsage.switchAndControl = distributePower.switchAndControl;
-
     }
 
     part powerConsumers : PowerConsumers {
-        // port powerPort {
-        //     in item power : Power;
-        // }
         in item powerIn : Power;
-
         perform action consumePower : ConsumeElectricalPower {
-            in powerIn : Power;
+            in power : Power;
         }
+        binding bind consumePower.power = powerIn;
+    }
+
+    part missionOperators : MissionOperators {
+        in item telemetry : TelemetryReport;
+        out item command : GroundCommand;
+        perform action commandPowerPolicy : CommandPowerPolicy {
+            in telemetryReport : TelemetryReport;
+            out groundCommand : GroundCommand;
+        }
+        binding bind commandPowerPolicy.telemetryReport = telemetry;
+        binding bind commandPowerPolicy.groundCommand = command;
+    }
+
+    part groundSegment : GroundSegment {
+        in item commandIn : GroundCommand;
+        in item telemetryIn : TelemetryReport;
+        out item commandOut : GroundCommand;
+        out item telemetryOut : TelemetryReport;
+        perform action sendCommands : SendCommands {
+            in groundCommandIn : GroundCommand;
+            out groundCommandOut : GroundCommand;
+        }
+        perform action receiveTelemetry : ReceiveTelemetry {
+            in telemetryReportIn : TelemetryReport;
+            out telemetryReportOut : TelemetryReport;
+        }
+        binding bind sendCommands.groundCommandIn = commandIn;
+        binding bind sendCommands.groundCommandOut = commandOut;
+        binding bind receiveTelemetry.telemetryReportIn = telemetryIn;
+        binding bind receiveTelemetry.telemetryReportOut = telemetryOut;
+    }
+
+    part spaceEnvironment : SpaceEnvironment {
+        out item environment : EnvironmentConditions;
+        perform action imposeOrbitalConditions : ImposeOrbitalConditions {
+            out environmentConditions : EnvironmentConditions;
+        }
+        binding bind imposeOrbitalConditions.environmentConditions = environment;
     }
 
     // =====================================
@@ -87,6 +104,9 @@ package 'Operational Analysis'
 
     connect spacecraftBus.powerOut to powerConsumers.powerIn;
     connect spacecraftBus.telemetry to spacecraftBus.telemetry;
+    connect missionOperators.command to groundSegment.commandIn;
+    connect groundSegment.telemetryOut to missionOperators.telemetry;
+    connect spaceEnvironment.environment to spacecraftBus.environment;
 
 
     // part Ejemplo {
