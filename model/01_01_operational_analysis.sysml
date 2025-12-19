@@ -8,7 +8,7 @@ package 'Operational Analysis'
     // Imports
     // =====================================
 
-    private import OperationalAnalysisDefinitions::*;
+    private import OperationalDefinitions::*;
 
     // // =====================================
     // // Operational Analysis Context

@@ -1,4 +1,4 @@
-package OperationalAnalysisDefinitions
+package OperationalDefinitions
 {
     // =====================================
     // Imports
