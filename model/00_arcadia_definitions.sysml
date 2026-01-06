@@ -16,9 +16,9 @@ package Arcadia {
 
     action def OperationalActivity;
     connection def OperationalInteraction {
-        end fromOA : OperationalActivity;
-        end toOA : OperationalActivity;
-        connection connect fromOA to toOA;
+        end fromPort : OperationalActivity;
+        end toPort : OperationalActivity;
+        connection connect fromPort to toPort;
     }
     action def OperationalProcess :> OperationalActivity;
     action def OperationalScenario :> OperationalProcess;

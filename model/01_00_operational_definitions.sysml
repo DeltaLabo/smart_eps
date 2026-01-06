@@ -168,4 +168,16 @@ package OperationalDefinitions
     action def ImposeOrbitalConditions :> OperationalActivity{
         out environmentConditions : EnvironmentConditions;
     }
+
+    // =====================================
+    // Operational Interactions
+    // =====================================
+
+    // SpacecraftBus to powerConsumers
+    connection def TransferPower :> OperationalInteraction{
+        end source : OperationalActivity;
+        end sink : OperationalActivity;
+        item transferredPower : Power;
+    }  
+
 }

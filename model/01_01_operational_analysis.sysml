@@ -117,7 +117,14 @@ package 'Operational Analysis'
     // Operational Interactions
     // =====================================  
 
-    connect spacecraftBus.powerOut to powerConsumers.powerIn;
+    connection transferPower : TransferPower {
+        end fromPort : spacecraftBus.distributePower;
+        end toPort   : powerConsumers.consumePower;
+        binding bind transferredPower = fromPort.powerOut;
+        binding bind transferredPower = toPort.power;
+        connection connect fromPort to toPort;
+    }
+    //connect spacecraftBus.powerOut to powerConsumers.powerIn;
     connect spacecraftBus.internalTelemetry to spacecraftBus.internalTelemetry;
     connect missionOperators.command to groundSegment.commandIn;
     connect groundSegment.telemetryOut to missionOperators.telemetry;
