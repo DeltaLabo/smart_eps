@@ -8,9 +8,9 @@ package OperationalDefinitions
     public import MeasurementReferences::*;
     public import Arcadia::*;
 
-    // // =====================================
-    // // Missions and Operational Capabilities
-    // // =====================================
+    // =====================================
+    // Missions and Operational Capabilities
+    // =====================================
 
     // use case OA_M1_ProvideElectricalPower : OperationalMission {
     //     use case OC1_1_ProvideUnregulatedPowerRail : OperationalCapability;
@@ -173,11 +173,39 @@ package OperationalDefinitions
     // Operational Interactions
     // =====================================
 
-    // SpacecraftBus to powerConsumers
     connection def TransferPower :> OperationalInteraction{
-        end source : OperationalActivity;
-        end sink : OperationalActivity;
-        item transferredPower : Power;
-    }  
+        end source : Power;
+        end sink : Power;
+        connection connect source to sink;
+    }
 
+    connection def SendCommandToGS :> OperationalInteraction{
+        end source : GroundCommand;
+        end sink : GroundCommand;
+        connection connect source to sink;
+    }
+
+    connection def TelemetryToMC :> OperationalInteraction{
+        end source : TelemetryReport;
+        end sink : TelemetryReport;
+        connection connect source to sink;
+    }
+
+    connection def EnvironmentToSC :> OperationalInteraction{
+        end source : EnvironmentConditions;
+        end sink : EnvironmentConditions;
+        connection connect source to sink;
+    }
+
+    connection def CommandToSC :> OperationalInteraction{
+        end source : GroundCommand;
+        end sink : GroundCommand;
+        connection connect source to sink;
+    }
+
+    connection def TelemetryToGS :> OperationalInteraction{
+        end source : TelemetryReport;
+        end sink : TelemetryReport;
+        connection connect source to sink;
+    }
 }

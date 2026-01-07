@@ -113,22 +113,23 @@ package 'Operational Analysis'
         binding bind imposeOrbitalConditions.environmentConditions = environment;
     }
 
-    // =====================================
-    // Operational Interactions
-    // =====================================  
+    connection transferPower : TransferPower connect 
+        spacecraftBus.powerOut to powerConsumers.powerIn;
 
-    connection transferPower : TransferPower {
-        end fromPort : spacecraftBus.distributePower;
-        end toPort   : powerConsumers.consumePower;
-        binding bind transferredPower = fromPort.powerOut;
-        binding bind transferredPower = toPort.power;
-        connection connect fromPort to toPort;
-    }
-    //connect spacecraftBus.powerOut to powerConsumers.powerIn;
-    connect spacecraftBus.internalTelemetry to spacecraftBus.internalTelemetry;
-    connect missionOperators.command to groundSegment.commandIn;
-    connect groundSegment.telemetryOut to missionOperators.telemetry;
-    connect spaceEnvironment.environment to spacecraftBus.environment;
-    connect groundSegment.commandOut to spacecraftBus.commandIn;
-    connect spacecraftBus.telemetry to groundSegment.telemetryIn;
+    connect spacecraftBus.internalTelemetry to spacecraftBus.internalTelemetry;//Check this
+
+    connection sendCommandToGS : SendCommandToGS connect
+        missionOperators.command to groundSegment.commandIn;
+
+    connection telemetryToMC : TelemetryToMC connect 
+        groundSegment.telemetryOut to missionOperators.telemetry;
+    
+    connection environmentToSC : EnvironmentToSC connect 
+        spaceEnvironment.environment to spacecraftBus.environment;
+
+    connection commandToSC : CommandToSC connect 
+        groundSegment.commandOut to spacecraftBus.commandIn;
+    
+    connection telemetryToGS : TelemetryToGS connect 
+        spacecraftBus.telemetry to groundSegment.telemetryIn;
 }
