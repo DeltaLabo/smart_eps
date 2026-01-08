@@ -3,34 +3,11 @@ package OperationalDefinitions
     // =====================================
     // Imports
     // =====================================
+    
     public import SI::*;
     public import ScalarValues::*;
     public import MeasurementReferences::*;
     public import Arcadia::*;
-
-    // =====================================
-    // Missions and Operational Capabilities
-    // =====================================
-
-    // use case OA_M1_ProvideElectricalPower : OperationalMission {
-    //     use case OC1_1_ProvideUnregulatedPowerRail : OperationalCapability;
-    //     use case OC1_2_ProvideRegulatedPowerRails : OperationalCapability;
-    //     use case OC1_3_ManagePowerDistribution : OperationalCapability;
-    //     use case OC1_4_SupportPowerAcrossPhases : OperationalCapability;
-    // }
-
-    // use case OA_M2_MaintainEnergySafetySurvivability : OperationalMission{
-    //     use case OC2_1_PreventUnsafeBatteryConditions : OperationalCapability;
-    //     use case OC2_2_SurviveEnvironmentConstraints : OperationalCapability;
-    //     use case OC2_3_EnterMaintainPowerSafeState : OperationalCapability;
-    // }
-
-    // use case OA_M3_EnableAutonomousPowerGovernance : OperationalMission{
-    //     use case OC3_1_SwitchBetweenSupervisedAndAutonomous : OperationalCapability;
-    //     use case OC3_2_DetectAndRespondToPowerAnomalies : OperationalCapability;
-    //     use case OC3_3_ShedAndRecoverLoadsByPriority : OperationalCapability;
-    //     use case OC3_4_ReportEnergyStateAndActions : OperationalCapability;
-    // }
 
     // // =====================================
     // // Operational Modes
@@ -56,117 +33,160 @@ package OperationalDefinitions
     // Exchange items
     // =====================================
 
+    item def SolarFlux :> ExchangeItem;
     item def EnvironmentConditions :> ExchangeItem;
     item def Power :> ExchangeItem;
     item def InternalBusTelemetry :> ExchangeItem;
     item def InternalBusCommand :> ExchangeItem;
-    item def PowerSwitchAndControl :> ExchangeItem;
-    item def GroundCommand :> ExchangeItem;
+    item def ControlData :> ExchangeItem;
+    item def FaultData :> ExchangeItem;
+    item def SensorData :> ExchangeItem;
+    item def BehavioralData :> ExchangeItem;
+    item def PredictiveData :> ExchangeItem;
+    item def BusCommand :> ExchangeItem;
+    item def BusTelemetry :> ExchangeItem;
+    item def SpaceSegmentTelemetry :> ExchangeItem;
     item def TelemetryReport :> ExchangeItem;
-    item def AnomalyReport :> ExchangeItem;
+    item def GroundCommand :> ExchangeItem;
 
     // =====================================
     // Operational Entities
     // =====================================
 
-    part def SpaceEnvironment :> OperationalEntity {
-        doc /* Operational environment
-            */
-        attribute :>> isHuman = false;
-    }
-
-    part def SpacecraftBus :> OperationalEntity {
-        doc /* The spacecraft bus, includes solar arrays and battery
-            */
-        attribute :>> isHuman = false;
-    }
-
-    part def PowerConsumers :> OperationalEntity {
-        doc /* Power-consuming subsystems and payloads
-            */
-        attribute :>> isHuman = false;
-    }
-
-    part def MissionOperators :> OperationalEntity {
-        doc /* Ground operators / mission control authority
-            */
-        attribute :>> isHuman = true;
-    }
-
-    part def GroundSegment :> OperationalEntity {
-        doc /* Telemetry, tracking and command infrastructure
-            */
-        attribute :>> isHuman = false;
-    }
+    part def SpaceEnvironment :> OperationalEntity;
+    part def SolarPanels :> OperationalEntity;
+    part def Batteries :> OperationalEntity;
+    part def PowerConverters :> OperationalEntity; 
+    part def PowerDistributionNetwork :> OperationalEntity;
+    part def Payloads :> OperationalEntity;
+    part def SpacecraftCommandAndControl :> OperationalEntity;
+    part def GroundSegment :> OperationalEntity;
 
     // =====================================
     // Operational Activities
     // =====================================
 
-    // SpacecraftBus
-    action def HarvestSolarEnergy :> OperationalActivity{
-        in environment : EnvironmentConditions;
-        out powerOut : Power;
+    // Space Environment
+    action def IrradiateSolarEnergy :> OperationalActivity{
+        out solarFlux : SolarFlux;
     }
 
-    action def StoreEnergy :> OperationalActivity{
+    action def ImposeOrbitalConditions :> OperationalActivity{
+        out environment : EnvironmentConditions;
+    }
+
+    // Solar Panels
+    action def HarvestMaxSolarPower :> OperationalActivity{
+        in solarFlux : SolarFlux;
+        out power : Power;
+    }
+
+    // Batteries
+    action def StoreExcessEnergy :> OperationalActivity{
         in environment : EnvironmentConditions;
+        in power : Power;
+    }
+
+    action def SupplyExcessEnergy :> OperationalActivity{
+        in environment : EnvironmentConditions;
+        out power : Power;
+    }
+
+    // Power Converters
+    action def RegulatePowerRails :> OperationalActivity{
         in powerIn : Power;
         out powerOut : Power;
-    }
+    }      
+
+    action def FilterPowerRails :> OperationalActivity{
+        in powerIn : Power;
+        out powerOut : Power;
+    } 
     
-    action def DistributeElectricalPower :> OperationalActivity{
-        in switchAndControl : PowerSwitchAndControl;
+    // Distribution Network 
+    action def DistributePower :> OperationalActivity{
         in powerIn : Power;
         out powerOut : Power;
     }    
 
-    action def ManagePowerUsageByPriority :> OperationalActivity{
-        in telemetryProcessed : InternalBusTelemetry;
-        in commandIn : InternalBusCommand;
-        out switchAndControl : PowerSwitchAndControl;
+    action def SwitchPowerLines :> OperationalActivity{
+        in control : ControlData;
+        in powerIn : Power;
+        in powerOut : Power;
     }
 
-    action def MonitorPowerAndEnergyState :> OperationalActivity{
-        in telemetryRaw : InternalBusTelemetry;
-        out telemetryProcessed : InternalBusTelemetry;
+    // Protections
+    action def DetectUnsafeElectricalConditions :> OperationalActivity{
+        in powerIn : Power;
+        out powerOut : Power;
+        out faultData : FaultData;
     }
 
-    action def ProcessCommands :> OperationalActivity{
-        in commandIn : GroundCommand;
-        out commandProcessed : InternalBusCommand;
+    action def IsolateFailures :> OperationalActivity{
+        in powerIn : Power;
+        out powerOut : Power;
     }
 
-    action def SendTelemetry :> OperationalActivity{
-        in telemetryIn : InternalBusTelemetry;
-        out telemetryOut : TelemetryReport;
+    action def EnableRecovery :> OperationalActivity{
+        in powerIn : Power;
+        out powerOut : Power;
     }
 
-    // PowerConsumers
-    action def ConsumeElectricalPower :> OperationalActivity{
-        in power : Power;
+    // Autonomous control
+    action def SenseAndConsolidate :> OperationalActivity{
+        in powerIn : Power;
+        out powerOut : Power;
+        out sensorData : SensorData;
     }
 
-    // MissionOperators
-    action def CommandPowerPolicy :> OperationalActivity{
+    action def UpdateBehavioralData :> OperationalActivity{
+        in sensorData : SensorData;
+        in behavioralDataIn : BehavioralData;
+        out behavioralDataOut : BehavioralData;
+    }    
+
+    action def CalculatePredictions :> OperationalActivity{
+        in behavioralData : BehavioralData;
+        out predictiveData : PredictiveData;
+    }
+
+    action def AutonomousControl :> OperationalActivity{
+        in predictiveData: PredictiveData;
+        in command : BusCommand;
+        out control : ControlData;
+    }
+
+    action def ConstructPowerTelemetry :> OperationalActivity{
+        in sensorData : SensorData;
+        in faultData : FaultData;
+        out powerTelemetry : BusTelemetry;
+    }
+
+    // Spacecraft Command and Control
+    action def ReceiveAndProcessCommand :> OperationalActivity{
+        in groundCommand : GroundCommand;
+        out busCommand : BusCommand;
+    }
+
+    action def ConsolidateAndSendBusTelemetry :> OperationalActivity{
+        in busTelemetry : BusTelemetry;
+        out spaceSegmentTelemetry : SpaceSegmentTelemetry;
+    }
+
+    // Ground Segment
+    action def ReceiveTelemetry :> OperationalActivity{
+        in spaceSegmentTelemetry : SpaceSegmentTelemetry;
+        out telemetryReport : TelemetryReport;
+    } 
+
+    action def DefineOperations :> OperationalActivity{
         in telemetryReport : TelemetryReport;
         out groundCommand : GroundCommand;
     }
 
-    // GroundSegment
     action def SendCommands :> OperationalActivity{
         in groundCommandIn : GroundCommand;
         out groundCommandOut : GroundCommand;
-    }
-
-    action def ReceiveTelemetry :> OperationalActivity{
-        in telemetryReportIn : TelemetryReport;
-        out telemetryReportOut : TelemetryReport;
-    }
-
-    // SpaceEnvironment
-    action def ImposeOrbitalConditions :> OperationalActivity{
-        out environmentConditions : EnvironmentConditions;
     }
 
     // =====================================

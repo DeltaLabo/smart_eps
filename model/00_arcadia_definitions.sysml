@@ -30,9 +30,7 @@ package Arcadia {
     // *Situation
 
     // Structural concepts
-    part def OperationalEntity {
-        attribute isHuman : Boolean;
-    }
+    part def OperationalEntity;
     part def OperationalActor :> OperationalEntity;
     // *BehavioralExchangeScenario
     // *CommunicationMeans
