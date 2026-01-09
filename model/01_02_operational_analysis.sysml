@@ -14,10 +14,83 @@ package 'Operational Analysis'
     // // Operational Analysis Context
     // // =====================================  
 
-    part solarPanel : SolarPanels{
-        in item environment : EnvironmentConditions;
-    
+    part spaceEnvironment : SpaceEnvironment{
+        out item environmentConditions : EnvironmentConditions;
+        out item solarFlux : SolarFlux;        
+        perform action imposeOrbitalConditions : ImposeOrbitalConditions{
+            out environmentConditions : EnvironmentConditions;
+        }
+        perform action irradiateSolarEnergy : IrradiateSolarEnergy{
+            out solarFlux : SolarFlux;
+        }
+        binding bind irradiateSolarEnergy.solarFlux = solarFlux;
     }
+
+    part solarPanels : SolarPanels{
+        in item environmentConditions : EnvironmentConditions;
+        in item solarFlux : SolarFlux;        
+        out item power : Power;
+        perform action harvestMaxSolarPower : HarvestMaxSolarPower{
+            in environmentConditions : EnvironmentConditions;
+            in solarFlux : SolarFlux;
+            out power : Power;
+        }
+        binding bind harvestMaxSolarPower.environmentConditions = environmentConditions;
+        binding bind harvestMaxSolarPower.solarFlux = solarFlux;
+        binding bind harvestMaxSolarPower.power = power;
+    }
+
+    part batteries : Batteries{
+        in item environmentConditions : EnvironmentConditions;
+        port power : Power;
+        perform action bufferExcessEnergy : BufferExcessEnergy{
+            in environmentConditions : EnvironmentConditions;
+            power : Power;
+        }
+        binding bind bufferExcessEnergy.environmentConditions = environmentConditions;
+        binding bind bufferExcessEnergy.power = power;
+    }
+
+    part powerDistributionNetwork : PowerDistributionNetwork{
+        in item solarIn : Power;
+        out item unregOut : Power;
+        port batteries : Power;
+        perform action distributeUnregulatedPower : DistributePower{
+            in solarIn : Power;
+            out unregOut : Power;
+            batteries : Power;
+        }
+        binding bind distributeUnregulatedPower.solarIn = solarIn;
+        binding bind distributeUnregulatedPower.unregOut = unregOut;
+        binding bind distributeUnregulatedPower.batteries = batteries;
+    }
+
+    part powerConverters : PowerConverters{
+        in item powerIn : Power;
+    }
+    
+    connection solarFluxToSolarPanels : SolarFluxToSolarPanels connect
+        spaceEnvironment.solarFlux to solarPanels.solarFlux;
+
+    connection spaceEnvironmentToPanels : SpaceEnvironmentToPower connect
+        spaceEnvironment.environmentConditions to solarPanels.environmentConditions;
+
+    connection spaceEnvironmentToBatteries : SpaceEnvironmentToPower connect
+        spaceEnvironment.environmentConditions to batteries.environmentConditions;
+    
+    connection panelsToPDS : UnregulatedPowerFlow connect
+        solarPanels.power to powerDistributionNetwork.solarIn;
+    
+    connection pdsToBatteries : UnregulatedPowerFlow connect
+        powerDistributionNetwork.batteries to batteries.power;
+
+    connection pdsToPowerConverters : UnregulatedPowerFlow connect
+        powerDistributionNetwork.unregOut to powerConverters.powerIn;
+
+    // part def PowerDistributionNetwork :> OperationalEntity;
+    // part def Payloads :> OperationalEntity;
+    // part def SpacecraftCommandAndControl :> OperationalEntity;
+    // part def GroundSegment :> OperationalEntity;
     // part spacecraftBus : SpacecraftBus {
     //     in item environment : EnvironmentConditions;
     //     in item internalTelemetry : InternalBusTelemetry;

@@ -67,29 +67,26 @@ package OperationalDefinitions
     // =====================================
 
     // Space Environment
-    action def IrradiateSolarEnergy :> OperationalActivity{
-        out solarFlux : SolarFlux;
+    action def ImposeOrbitalConditions :> OperationalActivity{
+        out environmentOut : EnvironmentConditions;
     }
 
-    action def ImposeOrbitalConditions :> OperationalActivity{
-        out environment : EnvironmentConditions;
+    action def IrradiateSolarEnergy :> OperationalActivity{
+        out solarFluxOut : SolarFlux;
     }
 
     // Solar Panels
     action def HarvestMaxSolarPower :> OperationalActivity{
-        in solarFlux : SolarFlux;
-        out power : Power;
+        in environmentIn : EnvironmentConditions;
+        in solarFluxOut : SolarFlux;
+        out powerOut : Power;
     }
 
     // Batteries
-    action def StoreExcessEnergy :> OperationalActivity{
-        in environment : EnvironmentConditions;
-        in power : Power;
-    }
-
-    action def SupplyExcessEnergy :> OperationalActivity{
-        in environment : EnvironmentConditions;
-        out power : Power;
+    action def BufferExcessEnergy :> OperationalActivity{
+        in environmentIn : EnvironmentConditions;
+        in powerIn : Power;
+        out powerOut : Power;
     }
 
     // Power Converters
@@ -193,39 +190,49 @@ package OperationalDefinitions
     // Operational Interactions
     // =====================================
 
-    connection def TransferPower :> OperationalInteraction{
+    // Space Environment to Solar Panels
+
+    connection def SolarFluxToSolarPanels :> OperationalInteraction{
+        end source : SolarFlux;
+        end sink : SolarFlux;
+        connection connect source to sink;
+    }
+
+    connection def SpaceEnvironmentToPower :> OperationalInteraction{
+        end source : EnvironmentConditions;
+        end sink : EnvironmentConditions;
+        connection connect source to sink;
+    }
+    
+    connection def UnregulatedPowerFlow :> OperationalInteraction{
         end source : Power;
         end sink : Power;
         connection connect source to sink;
     }
 
-    connection def SendCommandToGS :> OperationalInteraction{
-        end source : GroundCommand;
-        end sink : GroundCommand;
+    connection def UnregulatedPower :> OperationalInteraction{
+        end source : Power;
+        end sink : Power;
         connection connect source to sink;
     }
 
-    connection def TelemetryToMC :> OperationalInteraction{
-        end source : TelemetryReport;
-        end sink : TelemetryReport;
-        connection connect source to sink;
-    }
+    // connection def TelemetryToMC :> OperationalInteraction{
+    //     end source : TelemetryReport;
+    //     end sink : TelemetryReport;
+    //     connection connect source to sink;
+    // }
 
-    connection def EnvironmentToSC :> OperationalInteraction{
-        end source : EnvironmentConditions;
-        end sink : EnvironmentConditions;
-        connection connect source to sink;
-    }
 
-    connection def CommandToSC :> OperationalInteraction{
-        end source : GroundCommand;
-        end sink : GroundCommand;
-        connection connect source to sink;
-    }
 
-    connection def TelemetryToGS :> OperationalInteraction{
-        end source : TelemetryReport;
-        end sink : TelemetryReport;
-        connection connect source to sink;
-    }
+    // connection def CommandToSC :> OperationalInteraction{
+    //     end source : GroundCommand;
+    //     end sink : GroundCommand;
+    //     connection connect source to sink;
+    // }
+
+    // connection def TelemetryToGS :> OperationalInteraction{
+    //     end source : TelemetryReport;
+    //     end sink : TelemetryReport;
+    //     connection connect source to sink;
+    //}
 }
