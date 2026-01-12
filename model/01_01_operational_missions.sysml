@@ -58,24 +58,4 @@ package OperationalMissions
         use case OA_M6_OC2_RunAutonomousPowerGovernance : OperationalCapability;
         use case OA_M6_OC3_TransitionBetweenGroundAndAutonomy : OperationalCapability;
     }
-
-    // // =====================================
-    // // Operational Modes
-    // // =====================================
-
-    // item ReleaseMode : Mode;
-    // item SunlightMode : Mode;
-    // item EclipseMode : Mode;
-    // item SafeMode : Mode;
-    // item FaultRecoveryMode : Mode;
-
-    // // =====================================
-    // // Operational Scenarios
-    // // =====================================
-
-    // item OA_S1_EclipseEntry_LoadShedding : OperationalScenario;
-    // item OA_S2_BatteryOverTemp_ProtectionAndRecovery : OperationalScenario;
-    // item OA_S3_RailLatchUp_IsolateAndReport : OperationalScenario;
-    // item OA_S4_LossOfGroundContact_AutonomousGovernance : OperationalScenario;
-    // item OA_S5_ReturnToNominal_ControlledLoadRestoration : OperationalScenario;
 }
