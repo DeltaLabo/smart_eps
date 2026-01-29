@@ -13,11 +13,21 @@ package OperationalDefinitions
     // // Operational Modes
     // // =====================================
 
-    // item ReleaseMode : Mode;
-    // item SunlightMode : Mode;
-    // item EclipseMode : Mode;
-    // item SafeMode : Mode;
-    // item FaultRecoveryMode : Mode;
+    // --- Authority ---
+    item def AutonomousGovernanceMode :> Mode; // EPS se autogestiona sin depender del OBC.
+    item def CommandedByOBCMode :> Mode;// El OBC fija órdenes. EPS ejecuta manteniendo protecciones.
+    item def GroundOverrideMode :> Mode;// Override desde tierra. Pruebas, diagnóstico, recuperación forzada, etc.
+
+    // --- Energy & Health ---
+    item def InitCommissioningMode :> Mode; // Arranque: chequeos/verificación de sensores y protecciones.
+    item def NormalPowerManagementMode :> Mode; // Gestión nominal de energía.
+    item def SunlightChargeMode :> Mode; // En sol: maximiza generación.
+    item def EclipseDischargeMode :> Mode; // En eclipse: batería sostiene el bus, controla presupuesto energético y evita caídas.
+    item def ContingencyMode :> Mode; // Modo de contingencia: prioriza supervivencia/estabilidad ante energía baja o fallas.
+    item def LoadSheddingMode :> Mode; // Recorta cargas no críticas para conservar energía.
+    item def ProtectionIsolationMode :> Mode; // Protección activa: limita/aisla rails o elementos por latch-up, sobrecorriente, sobretemp, UV/OV.
+    item def RecoveryMode :> Mode;// Recuperación controlada. Retorno a nominal.
+    item def SafeSurvivalMode :> Mode; // Supervivencia: mantiene solo funciones vitales.
 
     // // =====================================
     // // Operational Scenarios
