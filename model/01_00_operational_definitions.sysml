@@ -39,6 +39,38 @@ package OperationalDefinitions
     // item OA_S4_LossOfGroundContact_AutonomousGovernance : OperationalScenario;
     // item OA_S5_ReturnToNominal_ControlledLoadRestoration : OperationalScenario;
 
+
+
+    // // =====================================
+    // // Triggers                                      Se usan en Operational Modes y Scenarios
+    // // =====================================
+    enum def EPS_EventKind {
+    InitComplete;
+    EnterEclipse;
+    EnterSunlight;
+    SOC_Low;
+    SOC_Recovered;
+    BatteryOverTemp;
+    BatteryTempNormal;
+    RailLatchUpDetected;
+    FaultCleared;
+    RecoveryFailed;
+    CommandedModeEnabled;
+    CommandedModeDisabled;
+    GroundOverrideEnabled;
+    GroundOverrideDisabled;
+    }
+
+    item def EPS_Event {
+        attribute kind : EPS_EventKind;
+        }
+
+    port def EPSModeEventPort {
+        in evt : EPS_Event;
+        }
+    
+
+
     // =====================================
     // Exchange items
     // =====================================
